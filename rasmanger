@@ -1,0 +1,20 @@
+#!/bin/bash
+# NowPath=`/opt/rasmanger`
+NowPath=$(dirname $(readlink -f "$0"))
+FuncPath=${NowPath}/lib/func.sh
+
+#include func.sh
+. ${FuncPath}
+
+case ${1} in
+    -s)
+        showcputmp ${2}
+    ;;
+
+    *)
+        showCommandUsager
+    ;;
+
+esac
+
+
