@@ -1,6 +1,6 @@
 #!/bin/bash
 # NowPath=`/opt/rasmanger`
-NowPath=$(dirname $(readlink -f "$0"))
+NowPath=$(cd "$(dirname "$0")"; pwd)  
 FuncPath=${NowPath}/lib/func.sh
 
 #include func.sh
@@ -8,7 +8,7 @@ FuncPath=${NowPath}/lib/func.sh
 
 case ${1} in
     -s)
-        showcputmp ${2}
+        showcputemp ${2}
     ;;
 
     *)
