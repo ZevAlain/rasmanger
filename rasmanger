@@ -2,6 +2,7 @@
 NowPath="/opt/rasmanger/"
 # NowPath=$(cd "$(dirname "$0")"; pwd)  
 FuncPath=${NowPath}/lib/func.sh
+MianFIlePath=${NowPath}/rasmanger
 
 #include func.sh
 . ${FuncPath}
@@ -9,6 +10,14 @@ FuncPath=${NowPath}/lib/func.sh
 case ${1} in
     -s)
         showsysInfo ${2}
+    ;;
+
+    --update)
+        cp -a ${MianFIlePath} /tmp
+        cd /tmp
+        rm -rf ${NowPath}
+        git clone https://github.com/ZevAlain/rasmanger.git /opt/rasmanger;
+        cd  ${NowPath}
     ;;
 
     *)
