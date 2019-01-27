@@ -1,7 +1,7 @@
 #!/bin/bash
 showCommandUsager()
 {
-    echo "Use : rasmanger -s [ -a | -c | -g | -m ]"
+    echo "Use : rasmanger -s [ -a | -t | -g | -m ]"
 }
 
 showcputemp()
@@ -28,6 +28,16 @@ showmemuse()
 
 }
 
+showcpuusage()
+{
+
+    cpufreeuse=`vmstat |sed -n '3,1p' | awk -F' ' '{printf $15}'`
+    CpuUsage=`echo  ${cpufreeuse} | awk '{printf ("%.2f\n",100-/$1)}'`
+    
+    echo "Now Cpu Usage :" ${CpuUsage} "%"  
+
+}
+
 showsysInfo()
 {
     if [ $# -ne 1 ];then
@@ -36,18 +46,20 @@ showsysInfo()
     fi
 
     if [ "${1}" == "-a" ];then
-        #cpu
+        #cpu/gpu temp
         showcputemp
-        #gpu
         showgputemp
+        #cpu
+        showcpuusage
         #memory
         showmemuse
-    elif [ "${1}" == "-c" ];then
-        #cpu
+    elif [ "${1}" == "-t" ];then
+        #cpu/gpu temp
         showcputemp
-    elif [ "${1}" == "-g" ];then
-        #gpu
         showgputemp
+    elif [ "${1}" == "-c" ];then
+        #cpu use
+        showcpuusage
     elif [ "${1}" == "-m" ];then
         #memory
         showmemuse
