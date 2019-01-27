@@ -2,7 +2,6 @@
 showCommandUsager()
 {
     echo "Use : rasmanger -s [ -a | -t | -g | -m ] "
-    echo "                --update"
 }
 
 showcputemp()
