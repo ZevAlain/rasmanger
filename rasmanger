@@ -1,5 +1,5 @@
 #!/bin/bash
-NowPath=`/opt/rasmanger`
+NowPath=`/opt/rasmanger/`
 # NowPath=$(cd "$(dirname "$0")"; pwd)  
 FuncPath=${NowPath}/lib/func.sh
 

@@ -10,7 +10,7 @@ ln -s /opt/rasmanger/rasmanger /usr/bin/rasmaner
 ##### 卸载
 
 ```
-rm -rf /op/ramanger;rm -rf /usr/bin/rasmanger
+rm -rf /opt/rasmanger;rm -rf /usr/bin/rasmaner
 ```
 
 ##### 使用指南
