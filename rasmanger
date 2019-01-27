@@ -21,7 +21,7 @@ case ${1} in
         cd 
         rm -rf ${NowPath}
         git clone https://github.com/ZevAlain/rasmanger.git /opt/rasmanger
-        cd -
+        cd - >> /dev/null
     ;;
 
     *)
