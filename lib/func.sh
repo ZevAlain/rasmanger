@@ -1,7 +1,7 @@
 #!/bin/bash
 showCommandUsager()
 {
-    echo "Use : rasmanger -s [ -a | -c | -g ]"
+    echo "Use : rasmanger -s [ -a | -c | -g | -m ]"
 }
 
 showcputemp()
@@ -23,7 +23,7 @@ showmemuse()
     allmemuse=`sed -n "1, 1p" /proc/meminfo | awk -F' ' '{print $2}'`
     Nowusemem=`sed -n "2, 1p" /proc/meminfo | awk -F' ' '{print $2}'`
 
-    MemoryUsage=`expr ${Nowusemem}/${allmemuse}`
+    MemoryUsage=`echo  ${Nowusemem} ${allmemuse} | awk '{printf ("%.2f\n",$1/$2*100)}'`
     echo "Now Memory Usage :" ${MemoryUsage} "%"
 
 }
