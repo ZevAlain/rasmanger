@@ -15,7 +15,7 @@ case ${1} in
     --update)
         cd 
         rm -rf ${NowPath}
-        git clone https://github.com/ZevAlain/rasmanger.git /opt/rasmanger >> /dev/null
+        git clone https://github.com/ZevAlain/rasmanger.git /opt/rasmanger
         cd  ${NowPath}
     ;;
 
