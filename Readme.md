@@ -26,7 +26,7 @@ rm -rf /opt/rasmanger;rm -rf /usr/bin/rasmaner
   - -c : cpu使用率
   - -m : memory使用率
 
-##### 设备信息
+##### 测试设备
 
 - 设备 : Raspberry Pi 3b
 
