@@ -21,8 +21,8 @@ rm -rf /opt/rasmanger;rm -rf /usr/bin/rasmanger
 
 ##### 使用指南
 
-- 查看CPU/GPU温度  
-  - rasmanger -s [ -a | -t | -c | -m ]
+- rasmanger -s [ -a | -t | -c | -m ]
+  - -a : 显示以下所有信息
   - -t : cpu / gpu 温度
   - -c : cpu使用率
   - -m : memory使用率
