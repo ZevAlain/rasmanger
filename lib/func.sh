@@ -1,7 +1,8 @@
 #!/bin/bash
 showCommandUsager()
 {
-    echo "Use : rasmanger -s [ -a | -t | -g | -m ]"
+    echo "Use : rasmanger -s [ -a | -t | -g | -m ] "
+    echo "                --update"
 }
 
 showcputemp()
@@ -49,7 +50,7 @@ showsysInfo()
         #cpu/gpu temp
         showcputemp
         showgputemp
-
+        
         echo
         #cpu
         showcpuusage
@@ -67,6 +68,29 @@ showsysInfo()
         showmemuse
     else
         showCommandUsager
+    fi
+
+}
+
+checkFileExist()
+{
+    MemFile="/proc/meminfo"
+    CputempFIle="/sys/class/thermal/thermal_zone0/temp"
+    GputempFIle="/opt/vc/bin/vcgencmd measure_temp"
+
+    if [ ! -f "$MemFile" ]; then
+        echo "${MemFile} is not exist"
+        exit 1
+    fi
+
+    if [ ! -f "$CputempFIle" ]; then
+        echo "${CputempFIle} is not exist"
+        exit 1
+    fi
+
+    if [ ! -f "$GputempFIle" ]; then
+        echo "${GputempFIle} is not exist"
+        exit 1
     fi
 
 }

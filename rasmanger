@@ -1,11 +1,16 @@
 #!/bin/bash
 NowPath="/opt/rasmanger/"
-# NowPath=$(cd "$(dirname "$0")"; pwd)  
 FuncPath=${NowPath}/lib/func.sh
-MianFIlePath=${NowPath}/rasmanger
+
+if [ ! -f "$FuncPath" ]; then
+    echo "${FuncPath} is not exist"
+    exit 1
+fi
 
 #include func.sh
 . ${FuncPath}
+
+checkFileExist
 
 case ${1} in
     -s)
