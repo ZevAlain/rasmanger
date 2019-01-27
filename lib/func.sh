@@ -17,6 +17,17 @@ showgputemp()
         echo "Now GPU Temp :" ${CurrentNowTem} "'C"
 }
 
+showmemuse()
+{
+    #all memory
+    allmemuse=`sed -n "1, 1p" /proc/meminfo | awk -F' ' '{print $2}'`
+    Nowusemem=`sed -n "2, 1p" /proc/meminfo | awk -F' ' '{print $2}'`
+
+    MemoryUsage=`expr ${Nowusemem}/${allmemuse}`
+    echo "Now Memory Usage :" ${MemoryUsage} "%"
+
+}
+
 showsysInfo()
 {
     if [ $# -ne 1 ];then
@@ -25,12 +36,21 @@ showsysInfo()
     fi
 
     if [ "${1}" == "-a" ];then
+        #cpu
         showcputemp
+        #gpu
         showgputemp
+        #memory
+        showmemuse
     elif [ "${1}" == "-c" ];then
+        #cpu
         showcputemp
     elif [ "${1}" == "-g" ];then
+        #gpu
         showgputemp
+    elif [ "${1}" == "-m" ];then
+        #memory
+        showmemuse
     else
         showCommandUsager
     fi
