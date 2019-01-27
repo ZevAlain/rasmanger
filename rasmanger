@@ -13,8 +13,7 @@ case ${1} in
     ;;
 
     --update)
-        cp -a ${MianFIlePath} /tmp
-        cd /tmp
+        cd 
         rm -rf ${NowPath}
         git clone https://github.com/ZevAlain/rasmanger.git /opt/rasmanger;
         cd  ${NowPath}
