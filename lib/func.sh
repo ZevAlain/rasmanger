@@ -35,7 +35,7 @@ showcpuusage()
     cpufreeuse=`vmstat |sed -n '3,1p' | awk -F' ' '{printf $15}'`
     CpuUsage=`echo ${cpufreeuse} | awk '{printf ("%.2f\n",100-$1)}'`
     
-    echo "Now Cpu Usage :" ${CpuUsage} "%"  
+    echo "Now CPU Usage :" ${CpuUsage} "%"  
 
 }
 
