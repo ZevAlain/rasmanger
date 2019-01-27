@@ -49,6 +49,8 @@ showsysInfo()
         #cpu/gpu temp
         showcputemp
         showgputemp
+
+        echo
         #cpu
         showcpuusage
         #memory
