@@ -1,7 +1,7 @@
 #!/bin/bash
 showCommandUsager()
 {
-    echo "Use : rasmanger -s [ -a | -t | -g | -m ] "
+    echo "Use : rasmanger -s [ -a | -t | -c | -m ] "
 }
 
 showcputemp()
