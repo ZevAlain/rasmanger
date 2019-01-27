@@ -3,8 +3,7 @@
 ##### 安装
 
 ```
-git clone https://github.com/ZevAlain/rasmanger.git /opt/rasmanger
-ln -s /opt/rasmanger/rasmanger /usr/bin/rasmaner
+git clone https://github.com/ZevAlain/rasmanger.git /opt/rasmanger;ln -s /opt/rasmanger/rasmanger /usr/bin/rasmaner
 ```
 
 ##### 卸载
