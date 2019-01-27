@@ -50,7 +50,7 @@ showsysInfo()
         #cpu/gpu temp
         showcputemp
         showgputemp
-        
+
         echo
         #cpu
         showcpuusage
@@ -76,7 +76,7 @@ checkFileExist()
 {
     MemFile="/proc/meminfo"
     CputempFIle="/sys/class/thermal/thermal_zone0/temp"
-    GputempFIle="/opt/vc/bin/vcgencmd measure_temp"
+    GputempFIle="/opt/vc/bin/vcgencmd"
 
     if [ ! -f "$MemFile" ]; then
         echo "${MemFile} is not exist"
